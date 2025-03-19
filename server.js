@@ -59,7 +59,30 @@ app.post('/tasks', (req, res) => {
     res.status(201).json(newTask);
 });
 
+app.get('/users/:name/tasks', (req, res) => {
+    const tasks = req.params.tasks;
+    res.status(400).json({ error: "All tasks assigned to a specific person" })
+    return tasks;
+})
 
+app.get("/tasks/pending", (req, res) => {
+    const pending = req.params.pending;
+    res.status(400).json({ error: "All tasks that are still open" });
+    return pending;
+})
+
+app.post("/tasks/:id/status", (req, res) => {
+    const id = req.params.id;
+    if (!tasks || open || inprogress || closed);
+    res.status(400).json({ error: "Update the status " })
+    return id;
+})
+
+app.get("/tasks/sort/by-priority", (req, res) => {
+    const priority = req.params.priority;
+    if (!priority || high || medium || low);
+    res.status(400).json({ error: "All " })
+})
 
 app.use((req, res) => {
     res.status(404).json({ error: 'Endpoint not found.' });
